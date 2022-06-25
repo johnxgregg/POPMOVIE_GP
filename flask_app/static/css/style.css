@@ -60,24 +60,40 @@ h1 {
 .sign_in {
     color: white;
     background-color:rgb(11, 7, 7);
-    border-radius: 10px;
-    width: 100px;
-    height: 45px;
-    font-size: 30px;
-    text-decoration: none;
-    text-align: center;
-    margin-right: 20px;
-}
-
-.register {
-    color: white;
-    background-color:rgb(11, 7, 7);
-    border-radius: 10px;
+    border-radius: 3.75rem;
     width: 120px;
     height: 45px;
     font-size: 30px;
     text-decoration: none;
     text-align: center;
+    margin-right: 20px;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 2rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+}
+
+.sign_in:active {
+    transform: scale(.98);
+}
+
+.register {
+    color: white;
+    background-color:rgb(11, 7, 7);
+    border-radius: 3.75rem;
+    width: 130px;
+    height: 45px;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 2rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+}
+
+.register:active {
+    transform: scale(.98);
 }
 
 .login1 {
@@ -114,6 +130,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 5px;
+    margin-top: 20px;
 }
 
 .input1 {
@@ -124,18 +141,35 @@ h1 {
     width: 500px;
     height: 50px;
     margin: 10px;
+    transition: all 400ms ease;
 }
+
+.input1:hover {
+    transform: scale(1.03);
+    transition: all 400ms ease;
+}
+
 
 .sign_in_button {
     color: white;
-    background-color:rgb(16, 110, 253);
-    border-radius: 10px;
-    width: 100px;
-    height: 50px;
-    font-size: 25px;
-    margin-top: 30px;
-    margin: 50px;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 3.75rem;
+    line-height: 1.5rem;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 25px;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 2rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+    }
+
+.sign_in_button:active {
+    transform: scale(.98);
 }
+
+
 
 .sign_up {
     text-decoration: none;
@@ -172,6 +206,12 @@ h1 {
     width: 500px;
     height: 50px;
     margin: 10px;
+    transition: all 400ms ease;
+}
+
+.input3:hover {
+    transform: scale(1.03);
+    transition: all 400ms ease;
 }
 
 .form2 {
@@ -179,17 +219,26 @@ h1 {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    
+    margin-top: 50px;
 }
 
 .sign_in_button2 {
     color: white;
-    background-color:rgb(16, 110, 253);
-    border-radius: 10px;
-    width: 120px;
-    height: 50px;
-    font-size: 25px;
-    margin-top: 50px;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 3.75rem;
+    line-height: 1.5rem;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 35px;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 2rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+}
+
+.sign_in_button_2:active {
+    transform: scale(.98);
 }
 
 .back_btn {
@@ -202,4 +251,16 @@ h1 {
 
 .reg {
     margin-top: 10px;
+}
+
+.not_a_member {
+    margin-top: 50px;
+}
+
+strong {
+    color: white;
+}
+
+.valids {
+    color: #ff0400;
 }
