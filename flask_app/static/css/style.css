@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(18, 18, 19), rgb(138, 133, 133));
+    background-size: 100%;
+    background-position: center;
+}
+
+.movie_kid {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 650px;
+    margin-top: 100px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 50px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titan One', cursive;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 7rem;
+    margin-top: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titan One', cursive;
+}
+.pop {
+    color: red;
+}
+
+.welcome {
+    color: rgba(16, 110, 253, 100);
+}
+
+.nav {
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 50px;
+    padding: 50px;
+}
+
+.sign_in {
+    color: white;
+    background-color:rgb(11, 7, 7);
+    border-radius: 10px;
+    width: 100px;
+    height: 45px;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.register {
+    color: white;
+    background-color:rgb(11, 7, 7);
+    border-radius: 10px;
+    width: 120px;
+    height: 45px;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.login1 {
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 10px solid rgba(3, 3, 3, 0.18);
+    width: 600px;
+    height: 600px;
+    margin: 10px auto;
+    margin-top: 200px;
+    transform: scale(1.4);
+    transition: all 700ms ease;
+}
+
+.login1:hover {
+    background-color: rgb(255, 4, 0, );
+    box-shadow: 0 20px 50px 0 rgba(255, 4, 0, 100);
+    transition: all 400ms ease;
+}
+
+.form {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.form2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_input {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.input1 {
+    border-radius: 10px;
+    margin-right: 50px;
+    align-items: center;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    margin: 10px;
+}
+
+.sign_in_button {
+    color: white;
+    background-color:rgb(16, 110, 253);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    margin-top: 30px;
+    margin: 50px;
+}
+
+.sign_up {
+    text-decoration: none;
+    color: white;
+}
+
+.login_page {
+    margin-top: 10px;
+}
+
+.login {
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 10px solid rgba(3, 3, 3, 0.18);
+    width: 600px;
+    height: 800px;
+    margin: 10px auto;
+    margin-top: 180px;
+    transform: scale(1.3);
+    transition: all 700ms ease;
+}
+
+.login:hover {
+    background-color: rgb(255, 4, 0, );
+    box-shadow: 0 20px 50px 0 rgba(255, 4, 0, 100);
+    transition: all 400ms ease;
+}
+
+.input3 {
+    border-radius: 10px;
+    margin-right: 50px;
+    align-items: center;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    margin: 10px;
+}
+
+.form2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.sign_in_button2 {
+    color: white;
+    background-color:rgb(16, 110, 253);
+    border-radius: 10px;
+    width: 120px;
+    height: 50px;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.back_btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+    text-decoration: none;
+    color: white;
+}
+
+.reg {
+    margin-top: 10px;
+}

@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to POPMOVIE!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&family=PT+Serif:wght@700&family=Roboto:wght@300;900&family=Titan+One&display=swap" rel="stylesheet">
+    <title>POPMOVIE!</title>
 </head>
 <body>
-    
+    <nav>
+        <div class="nav">
+            <a href="/sign_in" class="sign_in">Sign in</a>
+            <a href="/register" class="register">Register</a>
+        </div>
+    </nav>
+    <div class="heading">
+        <h1 class="welcome"><span class="pop">POP</span>MOVIE!</h1>
+        <h2>Where movie lovers belong</h2>
+        
+    </div>
+    <div class="movie_kid">
+        <img src="/static/img/movie_kid.png" alt="movie kid">
+    </div>
 </body>
 </html>

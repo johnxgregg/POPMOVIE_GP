@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&family=PT+Serif:wght@700&family=Roboto:wght@300;900&family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Please Register</title>
 </head>
 <body>
-    
+    <h1 class="welcome"><span class="pop">POP</span>MOVIE!</h1>
+    <div class="login">
+        <form action="/register" method="post" class="form">
+            <h2 class="reg">Register</h2>
+            {% with messages = get_flashed_messages(category_filter=["register"]) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Invalid Credentials</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form2">
+                <div>
+                    <input type="text" name="username" class="input3" placeholder="User Name">
+                </div>
+                <div>
+                    <input type="text" name="email" class="input3" placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" name="password" class="input3" placeholder="Password">
+                </div>
+                <div>
+                    <input type="password" name="confirm" class="input3" placeholder="Confirm Password">
+                </div>
+            </div>
+            <input type="submit" value="Register" class="sign_in_button2">
+            <a href="/sign_in" class="back_btn">Back to login</a>
+        </form>
+    </div>
 </body>
 </html>
