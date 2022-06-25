@@ -1,12 +1,16 @@
-from flask import jsonify, render_template, redirect, request
+from flask import jsonify, render_template, redirect, session, request
 from flask_app import app
+from flask_app.models.user import User
 import requests
 
 @app.route('/dashboard')
-def top_ten_movies():
+def dashboard():
 
-    # -- NEED TO ADD LOGIC TO CHECK IF USER IS LOGGED IN -- #
-
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data ={
+        'id': session['user_id']
+    }
     # IMDb API ROUTE THAT YOU HAVE TO USE AN API KEY FOR
     # FREE PLAN ONLY ALLOWS 100 API CALLS/DAY WITH API KEY
     # RETURNS 100 MOST POPULAR MOVIES THAT CAN BE PARSED TO TOP 5 ON DASHBOARD.HTML PAGE
@@ -14,8 +18,9 @@ def top_ten_movies():
 
     movies = movie.json()['items']
     print(movie.json()['items'])
+    user=User.get_by_id(data)
 
-    return render_template('dashboard.html', movies = movies)
+    return render_template('dashboard.html', user = user, movies = movies)
 
 @app.route('/movie/<id>/details')
 def show_movie(id):

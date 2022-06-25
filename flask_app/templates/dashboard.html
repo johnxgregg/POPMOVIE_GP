@@ -14,8 +14,8 @@
         <!-- SHOW MOVIES -->
         <div class="row d-flex align-items-center my-5">
             <div class="col-12 col-md-4">
-                <h2 class="display-6 fst-italic text-light text-center">Welcome (Logged In User's Name Goes Here)</h2>
-                <img src="/static/images/movie_kid.png" alt="movie-kid" class="d-block img-fluid m-auto">
+                <h2 class="display-6 fst-italic text-light text-center">Welcome {{ user.username}}!</h2>
+                <img src="/static/img/movie_kid.png" alt="movie-kid" class="d-block img-fluid m-auto">
             </div>
             <div class="col-12 col-md-6 bg-secondary mx-auto">
                 <div class="shadow-lg p-3 my-5 bg-body rounded">
