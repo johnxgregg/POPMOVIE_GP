@@ -56,7 +56,7 @@ def create_review():
     if 'user_id' not in session:
         return redirect('/logout')
 
-        # Possible validations?
+    # Possible validations?
     #if not Movie.validate_comments(request.form):
         #return redirect('/movies/comments') 
 
