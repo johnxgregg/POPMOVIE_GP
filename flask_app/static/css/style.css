@@ -13,6 +13,7 @@ body {
 .movie_kid {
     display: flex;
     justify-content: center;
+    filter: drop-shadow(0 -6mm 4mm rgb(16, 110, 253));
 }
 
 img {
