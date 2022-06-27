@@ -20,7 +20,7 @@
                     <div class="alert alert-danger" role="alert">
                         <strong>Invalid Credentials</strong>
                             {% for message in messages %}
-                            <p>{{message}}</p>
+                            <p class="valids">{{message}}</p>
                             {% endfor %}
                     </div>
                     {% endif %}
@@ -34,7 +34,9 @@
                     </div>
                 </div>
                 <input type="submit" value="Sign in" class="sign_in_button">
+                <div class="not_a_member">
                 <p>Not a member?</p><a href="/register" class="sign_up">sign up</a>
+                </div>
             </form>
         </div>
 </body>
