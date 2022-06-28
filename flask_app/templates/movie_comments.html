@@ -10,7 +10,7 @@
     
 </head>
 
-<body>
+<body class="bg-secondary">
 
     <div class="container">
             
@@ -21,8 +21,12 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end m-3">
+            <a class="btn btn-primary justify-content-end" href="/dashboard">Dashboard</a>
+            <a class="btn btn-danger justify-content-end" href="/logout">Logout</a>
+        </div>
 
-        <div class="col2">
+        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
             <form action="/create" method="POST">
                 <div>
                     <img class="img-fluid d-block" src="{{movies.image}}" alt="logo" height="500" width="339">
@@ -35,8 +39,33 @@
                 <div class="new_comment">
                     <textarea name="comment">Comment Here</textarea>
                 </div>
-                <button class="submit">Submit Review</button>
+                <button  class="submit">Submit Review</button>
             </form>
+        </div>
+
+        <div class="row d-flex bg-light justify-content-around align-items-center mx-5">
+            {% for reviews in reviews %}
+            <table border="2px solid black">
+                <tbody>
+                    <tr>
+                        <th>{{reviews.username}}</th>
+                    </tr>
+                    <tr>
+                        <td>{{reviews.comment}}</td>
+                    </tr>
+                    <tr>
+                        <td>Rating: {{reviews.rating}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% if reviews.user_id == session.user_id %}
+                            <a href="/delete/{{reviews.id}}">Delete Review</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endfor %}
         </div>
 
     </div>
