@@ -16,12 +16,13 @@ body {
     filter: drop-shadow(0 -6mm 4mm rgb(16, 110, 253));
 }
 
+
 img {
     width: 650px;
     margin-top: 100px;
 }
 
-h2 {
+.landing_h2 {
     text-align: center;
     font-size: 3rem;
     margin-top: 50px;
@@ -43,13 +44,25 @@ h1 {
     font-family: 'Roboto', sans-serif;
     font-family: 'Titan One', cursive;
 }
+
+.title {
+    font-size: 2rem;
+    margin-top: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titan One', cursive; 
+}
 .pop {
     color: red;
 }
 
 .welcome {
     color: rgba(16, 110, 253, 100);
+    margin-left: 10px;
 }
+
 
 .nav {
     display: flex;
@@ -74,10 +87,6 @@ h1 {
                             0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
 }
 
-.sign_in:active {
-    transform: scale(.98);
-}
-
 .register {
     color: white;
     background-color:rgb(11, 7, 7);
@@ -91,10 +100,6 @@ h1 {
     box-shadow: 0 0rem 2rem 0 rgba(0,0,0,100),
                             0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
                             0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
-}
-
-.register:active {
-    transform: scale(.98);
 }
 
 .login1 {
@@ -131,7 +136,6 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 5px;
-    margin-top: 20px;
 }
 
 .input1 {
@@ -159,7 +163,7 @@ h1 {
     line-height: 1.5rem;
     font-size: 30px;
     font-weight: 500;
-    margin-top: 25px;
+    margin-top: 40px;
     background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
     box-shadow: 0 0rem 2rem 0 rgba(0,0,0,100),
                             0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
@@ -171,14 +175,25 @@ h1 {
 }
 
 
-
 .sign_up {
     text-decoration: none;
     color: white;
 }
 
+.sign_up1 {
+    margin-top: 50px;
+}
+
 .login_page {
     margin-top: 10px;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 50px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titan One', cursive;
 }
 
 .login {
@@ -252,6 +267,14 @@ h1 {
 
 .reg {
     margin-top: 10px;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 50px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titan One', cursive;
 }
 
 .not_a_member {
@@ -264,4 +287,191 @@ strong {
 
 .valids {
     color: #ff0400;
+}
+
+
+/* dashboard css */
+
+.head {
+    position: sticky;
+    top: 0;
+    background-image:linear-gradient(to bottom right, white, rgb(66, 65, 65));
+    height: 60px;
+    font-size: 2rem;
+}
+
+.t_data {
+    background-color: white;
+    transition: all 1s ease;
+    font-size: 1.5rem;
+    border: 1px black;
+}
+
+.t_data:hover {
+    background-color: white;
+    height: 5px;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.table {
+    border-spacing: 0 20px;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.nav {
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 100px;
+}
+
+.logout {
+    color: white;
+    cursor: pointer;
+    padding: 20px 30px;
+    border-radius: 3.75rem;
+    line-height: 1rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 1rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+    }
+
+.logout:active {
+    transform: scale(.98);
+}
+
+.dash_h2 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 80px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Titan One', cursive;
+}
+
+.movie_dash {
+    border-radius: 15px;
+    box-shadow: 0 20px 50px 0 rgb(218, 212, 212);
+    width: 2500px;
+    height:900px;
+    margin: 10px auto;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(138, 133, 133));
+    overflow-y: scroll;
+}
+
+
+.table {
+    border-spacing: 0 20px;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.imdb_img {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    /* margin-bottom: 80px; */
+    padding: 2px;
+    margin: 2px;
+}
+
+td {
+    font-size: 3rem;
+}
+
+
+.movie_dash::-webkit-scrollbar {
+    width: 20px;               /* width of the entire scrollbar */
+}
+
+.movie_dash::-webkit-scrollbar-track {
+    background: rgb(16, 110, 253, 100);
+    border-radius: 20px;        /* color of the tracking area */
+}
+
+.movie_dash::-webkit-scrollbar-thumb {
+    background-color: black;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(255, 4, 0,);  /* creates padding around scroll thumb */
+}
+
+.shadow {
+    text-shadow: 0px 0px 8px rgb(173, 169, 169);
+    text-align: center;
+    margin-top: -110px;
+    }
+
+    .user_welcome {
+        font-size: 3rem;
+    }
+
+
+.tickets {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 25px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.tickets:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.tickets:focus {
+    outline: none;
+}
+
+.details {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 25px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.details:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
