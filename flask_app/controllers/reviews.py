@@ -30,7 +30,7 @@ def create_review(id):
         return redirect('/logout')
 
     if not Review.validate_reviews(request.form):
-        return redirect('/movies/<id>/reviews') 
+        return redirect(f'/movie/{id}/reviews') 
 
     data = {
             'rating': request.form['rating'],
