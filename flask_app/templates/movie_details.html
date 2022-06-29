@@ -32,6 +32,9 @@
                 <div class="row g-3 my-3">
                     <div class="col-md-6">
                         <button type="button" class="btn btn-dark btn-lg text-warning fw-bold p-4" data-bs-toggle="modal" data-bs-target="#moreDetails">IMDb RATING: {{ movies.imDbRating }}</button>
+                        <p class="my-5">
+                            <a href="/movie/{{ movies.id }}/reviews" class="text-primary">Show Reviews</a>
+                        </p>
                     </div>
                 </div>
             </div>
