@@ -9,24 +9,24 @@ class Review:
         self.id = data['id']
         self.rating = data['rating']
         self.comment = data['comment']
+        self.imdb = data['imdb']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
-        self.movie_id = data['movie_id']
         self.user = None
 
 
     @classmethod 
     def save(cls, data):
-        query = "INSERT INTO reviews (rating, comment, user_id, movie_id) VALUES (%(rating)s, %(comment)s, %(user_id)s, %(movie_id)s);"
-        return connectToMySQL('popmovie').query_db(query, data)
+        query = "INSERT INTO reviews (rating, comment, imdb, user_id) VALUES (%(rating)s, %(comment)s, %(imdb)s, %(user_id)s);"
+        return connectToMySQL('popmovie3').query_db(query, data)
 
 
     @staticmethod
     def validate_reviews(data):
         is_valid = True 
-        if len(data['comment']) < 10:
-            flash('Comment must be a minimum of 10 characters.')
+        if len(data['comment']) < 1:
+            flash('Comment cannot be left blank.')
             is_valid = False
         if data['rating'] == "":
             flash('A rating needs to be given.')
