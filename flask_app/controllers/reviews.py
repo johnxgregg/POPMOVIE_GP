@@ -11,7 +11,7 @@ def new_review(id):
     if 'user_id' not in session:
         return redirect('/logout')
     data = {'id': session['user_id']}
-    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_19g8uwm0/{id}')
+    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_gj08scd0/{id}')
     movies = movie.json()
     return render_template('movie_comments.html', users=User.get_by_id(data), movies=movies, reviews=Review.get_all_reviews())
 
