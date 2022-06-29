@@ -66,25 +66,30 @@
                 <tbody>
                     {% if reviews.imdb == movies.id %}
                     <tr>
-
                         <td class="td_comm_1">{{reviews.username}}</td>
-
-                        
-
                     </tr>
                     <tr>
                         <td class="td_comm">{{reviews.comment}}</td>
                     </tr>
                     <tr>
-                        <td class="td_comm">Rating: {{reviews.rating}}</td>
+                        <td class="td_comm">
+                            {% if reviews.rating == '5' %}
+                            ⭐️⭐️⭐️⭐️⭐️
+                            {% elif reviews.rating == '4' %}
+                            ⭐️⭐️⭐️⭐️
+                            {% elif reviews.rating == '3' %}
+                            ⭐️⭐️⭐️
+                            {% elif reviews.rating == '2' %}
+                            ⭐️⭐️
+                            {% else %}
+                            ⭐️
+                            {% endif %}
+                        </td>
                     </tr>
                     <tr>
                         <td>
                             {% if reviews.user_id == session.user_id %}
-
                             <a href="/delete/{{reviews.imdb}}/{{reviews.id}}" class="td_comm_2">Delete Review</a>
-
-            
                             {% endif %}
                         </td>
                     </tr>
