@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&family=PT+Serif:wght@700&family=Roboto:wght@300;900&family=Titan+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Review a Movie</title>
-    
+    <title>Review a Movie</title>  
 </head>
 
 <body>
@@ -26,81 +24,59 @@
             {% endif %}
         {% endwith %}
         <div>
-            <a href="/dashboard" class="home">Home</a>
-            <a href="/logout" class="logout_4">Logout</a>
+            <ul>
+                <li><a href="/dashboard" class="home">Home</a></li>
+                <li><a href="/logout" class="logout_4">Logout</a></li>
+            </ul>
         </div>
         <div>
+        <img src="{{ movies.image }}" alt="logo" class="movie_com">
         <form action="/movie/{{movies.id}}/review/create" method="POST" class="form-inline">
-            <img src="{{ movies.image }}" alt="logo" class="movie_com">
+            <!-- <img src="{{ movies.image }}" alt="logo" class="movie_com"> -->
             <h2 class="comm_h2">Review Movie</h2>
             <input type="hidden" name="imdb" value="{{movies.id}}">
             <select name="rating" class="rating">
-                <option selected>Leave a rating</option>
+                <option selected>Star Rating</option>
                 <option value="1">⭐️</option>
                 <option value="2">⭐️⭐️</option>
                 <option value="3">⭐️⭐️⭐️</option>
                 <option value="4">⭐️⭐️⭐️⭐️</option>
                 <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
             </select>
-            <textarea type="text" id="txt" placeholder="Comment" name="txt" class="text_box"></textarea>
-            <button type="submit">Submit</button>
+            <textarea name="comment" placeholder="Leave a review here..." class="review_box"></textarea>              
+            <input type="hidden" name="movie_id" value="{{ movies.id }}">
+            <input type="submit" value="SUBMIT REVIEW" class="review_btn">
+            <!-- <textarea type="text" id="txt" placeholder="Comment" name="txt" class="text_box"></textarea>
+            <button type="submit">Submit</button> -->
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- <div>
-                <h2 class="comm_h2">Review</h2>
-                <select name="rating" class="rating">
-                    <option selected>Leave a rating</option>
-                    <option value="1">⭐️</option>
-                    <option value="2">⭐️⭐️</option>
-                    <option value="3">⭐️⭐️⭐️</option>
-                    <option value="4">⭐️⭐️⭐️⭐️</option>
-                    <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-                </select>
-            </div>
-                <div>
-                    <textarea name="comment" class="text_box">Comment Here</textarea>
-                </div>
-                <a class="details_1">Submit Review</a>
-            </form>
-        </div> -->
-        <div>
+        <div class="container">
             {% for reviews in reviews %}
-            <table>
+            <table class="table_1">
                 <tbody>
+                    {% if reviews.imdb == movies.id %}
                     <tr>
-                        <th>{{reviews.user.username}}</th>
+                        <td class="td_comm_1">{{reviews.user.username}}</td>
                     </tr>
                     <tr>
-                        <td>{{reviews.comment}}</td>
+                        <td class="td_comm">{{reviews.comment}}</td>
                     </tr>
                     <tr>
-                        <td>Rating: {{reviews.rating}}</td>
+                        <td class="td_comm">Rating: {{reviews.rating}}</td>
                     </tr>
                     <tr>
                         <td>
                             {% if reviews.user_id == session.user_id %}
-                            <a href="/delete/{{reviews.id}}">Delete Review</a>
+                            <a href="/delete/{{reviews.id}}" class="td_comm_2">Delete Review</a>
                             {% endif %}
                         </td>
                     </tr>
+                    {% endif %}
                 </tbody>
             </table>
             {% endfor %}
         </div>
 
     </div>
-
 </body>
 
 </html>

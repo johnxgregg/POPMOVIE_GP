@@ -12,7 +12,7 @@ def new_review(id):
         return redirect('/logout')
     data = {'id': session['user_id']}
 
-    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_gj08scd0/{id}')
+    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_70z2he3j/{id}')
     movies = movie.json()
     reviews = Review.get_all_reviews()
 
@@ -41,5 +41,5 @@ def create_review(id):
 def delete_job(id):
     data = {'id': id}
     Review.delete(data)
-    return redirect('/movies/<id>/reviews')
+    return redirect(f'/movies/<id>/reviews')
     

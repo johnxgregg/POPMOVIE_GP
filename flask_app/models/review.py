@@ -19,7 +19,7 @@ class Review:
     @classmethod 
     def save(cls, data):
         query = "INSERT INTO reviews (rating, comment, imdb, user_id) VALUES (%(rating)s, %(comment)s, %(imdb)s, %(user_id)s);"
-        return connectToMySQL('popmovie3').query_db(query, data)
+        return connectToMySQL('popmovie').query_db(query, data)
 
 
     @staticmethod
