@@ -11,12 +11,13 @@ def new_review(id):
     if 'user_id' not in session:
         return redirect('/logout')
     data = {'id': session['user_id']}
+    movie_data = {'imdb': id}
 
-    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_gj08scd0/{id}')
+    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_i1e26rt1/{id}')
     movies = movie.json()
-    reviews = Review.get_all_reviews()
-
-    return render_template('movie_comments.html', users=User.get_by_id(data), movies=movies, reviews=reviews)
+    reviews = Review.get_all_reviews(movie_data)
+    users = User.get_by_id(data)
+    return render_template('movie_comments.html', users=users, movies=movies, reviews=reviews)
 
 
 @app.route('/movie/<id>/review/create', methods=['POST'])
@@ -37,9 +38,9 @@ def create_review(id):
     return redirect(f'/movie/{id}/reviews')
 
 
-@app.route('/delete/<int:id>')
-def delete_job(id):
-    data = {'id': id}
+@app.route('/delete/<id>/<int:id2>')
+def delete_job(id,id2):
+    data = {'id': id2}
     Review.delete(data)
-    return redirect('/movies/<id>/reviews')
+    return redirect(f'/movie/{id}/reviews')
     
