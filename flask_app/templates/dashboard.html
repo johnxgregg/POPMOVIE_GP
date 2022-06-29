@@ -34,6 +34,7 @@
                     <!-- <th>Find Tickets</th> -->
                     <th>IMDb Rating</th>
                     <th>Action</th>
+                    <th>Review</th>
                     <th>Find Tickets</th>
                 </tr>
             </thead>
@@ -48,6 +49,9 @@
                         <td>{{ movies[n].imDbRating }}</td>
                         <td>
                             <a href="/movie/{{ movies[n].id}}/details" class="details">Details</a>
+                        </td>
+                        <td>
+                            <a href="/movies/{{movies[n].id}}/reviews" class="review">Review</a>
                         </td>
                         <td>
                             <a href="https://www.imdb.com/showtimes/?ref_=nv_mv_sh" class="tickets">Tickets</a>

@@ -304,7 +304,6 @@ strong {
     background-color: white;
     transition: all 1s ease;
     font-size: 1.5rem;
-    border: 1px black;
 }
 
 .t_data:hover {
@@ -362,7 +361,7 @@ strong {
 .movie_dash {
     border-radius: 15px;
     box-shadow: 0 20px 50px 0 rgb(218, 212, 212);
-    width: 2500px;
+    max-width: 90%;
     height:900px;
     margin: 10px auto;
     background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(138, 133, 133));
@@ -413,22 +412,23 @@ td {
     margin-top: -110px;
     }
 
-    .user_welcome {
-        font-size: 3rem;
-    }
+.user_welcome {
+    font-size: 3rem;
+}
 
 
 .tickets {
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #fff;
     cursor: pointer;
-    padding: 5px 25px;
+    padding: 5px 20px;
     border: none;
     background-size: 300% 100%;
     background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
     box-shadow: 0 4px 15px 0 black;
+    margin: 5px;
 
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
@@ -451,15 +451,16 @@ td {
 
 .details {
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #fff;
     cursor: pointer;
-    padding: 5px 25px;
+    padding: 5px 20px;
     border: none;
     background-size: 300% 100%;
     background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
     box-shadow: 0 4px 15px 0 black;
+    margin: 20px;
 
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
@@ -474,4 +475,131 @@ td {
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
+}
+
+.details:focus {
+    outline: none;
+}
+
+.review {
+    align-items:flex-end;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.review:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.review:focus {
+    outline: none;
+}
+
+.movie_com {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    height: auto;
+    border-radius: 30px;
+    /* margin-bottom: 200px; */
+    margin-top: 0;
+    box-shadow: 0 20px 50px 0 rgb(218, 212, 212);
+}
+
+/* Style the form - display items horizontally */
+.form-inline {
+    display: flex;
+    justify-content: center;
+    /* flex-flow: row wrap; */
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* .form-inline {
+    border: 3px solid black;
+} */
+
+  /* Style the input fields */
+.form-inline textarea select {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+  /* Style the submit button */
+.form-inline button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+    margin: 20px;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.form-inline button:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+  /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+.form-inline textarea select {
+    margin: 10px 0;
+}
+
+.form-inline {
+    flex-direction: column;
+    align-items: stretch;
+    }
+}
+
+
+.comm_h2 {
+    margin: 15px;
+    color: white;
+}
+
+.rating {
+    margin: 10px;
+}
+
+.text_box {
+    margin: 10px;
+    min-height: 2rem;
+    font-size: 14px;
 }

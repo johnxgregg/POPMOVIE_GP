@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&family=PT+Serif:wght@700&family=Roboto:wght@300;900&family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Review a Movie</title>
     
 </head>
 
-<body class="bg-secondary">
-
-    <div class="container">
-            
+<body>
+    <div class="title">
+        <h2 class="welcome"><span class="pop">POP</span>MOVIE!</h2>
+    </div>
+    <div>   
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -21,34 +25,61 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end m-3">
-            <a class="btn btn-primary justify-content-end" href="/dashboard">Dashboard</a>
-            <a class="btn btn-danger justify-content-end" href="/logout">Logout</a>
+        <div>
+            <a href="/dashboard" class="home">Home</a>
+            <a href="/logout" class="logout_4">Logout</a>
         </div>
+        <div>
+        <form action="/movie/{{movies.id}}/review/create" method="POST" class="form-inline">
+            <img src="{{ movies.image }}" alt="logo" class="movie_com">
+            <h2 class="comm_h2">Review Movie</h2>
+            <input type="hidden" name="imdb" value="{{movies.id}}">
+            <select name="rating" class="rating">
+                <option selected>Leave a rating</option>
+                <option value="1">⭐️</option>
+                <option value="2">⭐️⭐️</option>
+                <option value="3">⭐️⭐️⭐️</option>
+                <option value="4">⭐️⭐️⭐️⭐️</option>
+                <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+            </select>
+            <textarea type="text" id="txt" placeholder="Comment" name="txt" class="text_box"></textarea>
+            <button type="submit">Submit</button>
+        </form>
 
-        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-            <form action="/create" method="POST">
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div>
+                <h2 class="comm_h2">Review</h2>
+                <select name="rating" class="rating">
+                    <option selected>Leave a rating</option>
+                    <option value="1">⭐️</option>
+                    <option value="2">⭐️⭐️</option>
+                    <option value="3">⭐️⭐️⭐️</option>
+                    <option value="4">⭐️⭐️⭐️⭐️</option>
+                    <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+                </select>
+            </div>
                 <div>
-                    <img class="img-fluid d-block" src="{{movies.image}}" alt="logo" height="500" width="339">
+                    <textarea name="comment" class="text_box">Comment Here</textarea>
                 </div>
-                <div class="new_rating">
-                    <h2>Rating</h2>
-                    <input type="text" name="rating">
-                </div>
-                
-                <div class="new_comment">
-                    <textarea name="comment">Comment Here</textarea>
-                </div>
-                <button  class="submit">Submit Review</button>
+                <a class="details_1">Submit Review</a>
             </form>
-        </div>
-
-        <div class="row d-flex bg-light justify-content-around align-items-center mx-5">
+        </div> -->
+        <div>
             {% for reviews in reviews %}
-            <table border="2px solid black">
+            <table>
                 <tbody>
                     <tr>
-                        <th>{{reviews.username}}</th>
+                        <th>{{reviews.user.username}}</th>
                     </tr>
                     <tr>
                         <td>{{reviews.comment}}</td>
