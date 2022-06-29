@@ -26,10 +26,10 @@ class Review:
     def validate_reviews(data):
         is_valid = True 
         if len(data['comment']) < 1:
-            flash('Comment cannot be left blank.')
+            flash('Comment cannot be left blank!')
             is_valid = False
-        if data['rating'] == "":
-            flash('A rating needs to be given.')
+        if len(data['rating']) > 1 :
+            flash('A rating needs to be given!')
             is_valid = False
         return is_valid
 

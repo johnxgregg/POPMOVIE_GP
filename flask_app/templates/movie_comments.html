@@ -29,15 +29,10 @@
         
         {% if users.id in reviews | map(attribute="reviewer") %}
         {% else %}
-        <h2 class="comm_h2">Review Movie</h2>
+        
         <form action="/movie/{{movies.id}}/review/create" method="POST" class="form-inline">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <p>{{message}}</p>
-                {% endfor %}
-            {% endif %}
-            {% endwith %}
+            
+            <h2 class="comm_h2">Review Movie</h2>
             <input type="hidden" name="imdb" value="{{movies.id}}">
             <select name="rating" class="rating">
                 <option selected>Star Rating</option>
@@ -49,11 +44,21 @@
             </select>
 
             <textarea name="comment" placeholder="Leave a review here..." class="review_box"></textarea>              
-            <input type="hidden" name="movie_id" value="{{ movies.id }}">
             <input type="submit" value="SUBMIT REVIEW" class="review_btn">
             <!-- <textarea type="text" id="txt" placeholder="Comment" name="txt" class="text_box"></textarea>
             <button type="submit">Submit</button> -->
         </form>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="form-inline">
+                    <h2 class="comm_h2">{{message}}</h2>
+                </div>
+                    
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
         <div class="container">
 
             {% for reviews in reviews %}
@@ -77,7 +82,7 @@
                         <td>
                             {% if reviews.user_id == session.user_id %}
 
-                            <a href="/delete/{{reviews.id}}" class="td_comm_2">Delete Review</a>
+                            <a href="/delete/{{reviews.imdb}}/{{reviews.id}}" class="td_comm_2">Delete Review</a>
 
             
                             {% endif %}

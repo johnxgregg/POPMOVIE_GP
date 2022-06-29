@@ -598,7 +598,9 @@ td {
 }
 
 .review_box {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
+    padding: 3px;
     border: 3px solid black;
     border-radius: 10px;
     height: 50px; 
