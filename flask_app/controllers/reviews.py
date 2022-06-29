@@ -14,9 +14,9 @@ def new_review(id):
     movie_data = {'imdb': id}
 
 
-    
+    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_19g8uwm0/{id}')
 
-    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_i1e26rt1/{id}')
+    
 
     movies = movie.json()
     reviews = Review.get_all_reviews(movie_data)
