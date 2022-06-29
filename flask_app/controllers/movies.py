@@ -16,7 +16,10 @@ def dashboard():
     # FREE PLAN ONLY ALLOWS 100 API CALLS/DAY WITH API KEY
     # RETURNS 100 MOST POPULAR MOVIES THAT CAN BE PARSED TO TOP 5 ON DASHBOARD.HTML PAGE
     
-    movie = requests.get(f'https://imdb-api.com/en/API/MostPopularMovies/k_70z2he3j')
+
+
+    movie = requests.get(f'https://imdb-api.com/en/API/MostPopularMovies/k_i1e26rt1')
+
 
     movies = movie.json()['items']
     print(movie.json()['items'])
@@ -35,7 +38,9 @@ def show_movie(id):
     # IMDb API ROUTE THAT RETURNS ONE MOVIE BASED ON ITS IMDb ID
     # PARSED OUT TITLE, PLOT, AND IMDb RATING ON DETAILS.HTML PAGE
 
-    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_70z2he3j/{id}')
+
+    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_i1e26rt1/{id}')
+
     
     movies = movie.json()
     print(movie.json()['plot'])
