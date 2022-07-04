@@ -304,7 +304,6 @@ strong {
     background-color: white;
     transition: all 1s ease;
     font-size: 1.5rem;
-    border: 1px black;
 }
 
 .t_data:hover {
@@ -362,7 +361,7 @@ strong {
 .movie_dash {
     border-radius: 15px;
     box-shadow: 0 20px 50px 0 rgb(218, 212, 212);
-    width: 2500px;
+    max-width: 90%;
     height:900px;
     margin: 10px auto;
     background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(138, 133, 133));
@@ -413,22 +412,23 @@ td {
     margin-top: -110px;
     }
 
-    .user_welcome {
-        font-size: 3rem;
-    }
+.user_welcome {
+    font-size: 3rem;
+}
 
 
 .tickets {
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #fff;
     cursor: pointer;
-    padding: 5px 25px;
+    padding: 5px 20px;
     border: none;
     background-size: 300% 100%;
     background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
     box-shadow: 0 4px 15px 0 black;
+    margin: 5px;
 
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
@@ -451,15 +451,16 @@ td {
 
 .details {
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #fff;
     cursor: pointer;
-    padding: 5px 25px;
+    padding: 5px 20px;
     border: none;
     background-size: 300% 100%;
     background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
     box-shadow: 0 4px 15px 0 black;
+    margin: 20px;
 
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
@@ -474,4 +475,301 @@ td {
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
+}
+
+.details:focus {
+    outline: none;
+}
+
+.review {
+    align-items:flex-end;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.review:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.review:focus {
+    outline: none;
+}
+
+.movie_com {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    height: auto;
+    border-radius: 30px;
+    /* margin-bottom: 200px; */
+    margin-top: 0;
+    box-shadow: 0 20px 50px 0 rgb(218, 212, 212);
+}
+
+
+.form-inline {
+    display: flex;
+    justify-content: center;
+    /* flex-flow: row wrap; */
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+.form-inline textarea select {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+
+.form-inline button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+    margin: 20px;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.form-inline button:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+
+@media (max-width: 800px) {
+.form-inline textarea select {
+    margin: 10px 0;
+}
+
+.form-inline {
+    flex-direction: column;
+    align-items: stretch;
+    }
+}
+
+
+.comm_h2 {
+    margin: 15px;
+    color: white;
+}
+
+.rating {
+    margin: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.review_box {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    padding: 3px;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 50px; 
+}
+
+.text_box {
+    margin: 10px;
+    min-height: 2rem;
+    font-size: 14px;
+}
+
+.review_btn {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+    margin: 20px;
+
+    border-radius: 10px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out; 
+}
+
+.review_btn:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.table_1 {
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.td_comm {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.td_comm_1 {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.td_comm_2 {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+
+.table_1 {
+    width: 30%;
+    height: 100%;
+    object-fit:cover;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 20px;
+    
+    -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+    
+    transform-origin:center;
+    transform:perspective(800px) rotateY(25deg);
+    transition:0.5s;
+}
+.container {
+    max-width:900px;
+    max-height:350px;
+    
+    
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    
+}
+.container:hover .table_1 {
+    opacity:0.3;
+}
+.container .table_1:hover {
+    transform:perspective(800px)       rotateY(0deg);
+    opacity:1;
+}
+
+.table_1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, black, rgb(72, 69, 69),#ff0400, #106efd);
+    box-shadow: 0 4px 15px 0 black;
+    margin: 20px;
+
+    border-radius: 10px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.table_1:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+ul {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    margin: 10px;
+}
+
+.home, .logout_4 {
+    padding: 10px;
+    text-decoration: none;
+}
+
+.logout_4, .home {
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 3.75rem;
+    line-height: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 1rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+    }
+
+.logout_4:active {
+    transform: scale(.98);
+}
+
+.home:active {
+    transform: scale(.98);
+}
+
+.home {
+    margin: 20px;
 }
