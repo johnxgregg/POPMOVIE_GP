@@ -63,3 +63,14 @@ class Review:
         query = "DELETE FROM reviews where id = %(id)s;"
         return connectToMySQL('popmovie').query_db(query, data)
 
+    @classmethod
+    def get_reviews_by_user(cls, data):
+        query = "SELECT * FROM reviews WHERE user_id = %(id)s;"
+        results = connectToMySQL('popmovie').query_db(query, data)
+        reviews = []
+        if not results:
+            return reviews
+        for row in results:
+            reviews.append(cls(row))
+        return reviews
+

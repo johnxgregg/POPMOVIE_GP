@@ -58,28 +58,29 @@
                     
                 {% endfor %}
             {% endif %}
-            {% endwith %}
+        {% endwith %}
         <div class="container">
 
-            {% for reviews in reviews %}
+
+            {% for review in reviews %}
             <table class="table_1">
                 <tbody>
-                    {% if reviews.imdb == movies.id %}
+                    {% if review.imdb == movies.id %}
                     <tr>
-                        <td class="td_comm_1">{{reviews.username}}</td>
+                        <td class="td_comm_1">{{review.username}}</td>
                     </tr>
                     <tr>
-                        <td class="td_comm">{{reviews.comment}}</td>
+                        <td class="td_comm">{{review.comment}}</td>
                     </tr>
                     <tr>
                         <td class="td_comm">
-                            {% if reviews.rating == '5' %}
+                            {% if review.rating == '5' %}
                             ⭐️⭐️⭐️⭐️⭐️
-                            {% elif reviews.rating == '4' %}
+                            {% elif review.rating == '4' %}
                             ⭐️⭐️⭐️⭐️
-                            {% elif reviews.rating == '3' %}
+                            {% elif review.rating == '3' %}
                             ⭐️⭐️⭐️
-                            {% elif reviews.rating == '2' %}
+                            {% elif review.rating == '2' %}
                             ⭐️⭐️
                             {% else %}
                             ⭐️
@@ -88,8 +89,8 @@
                     </tr>
                     <tr>
                         <td>
-                            {% if reviews.user_id == session.user_id %}
-                            <a href="/delete/{{reviews.imdb}}/{{reviews.id}}" class="td_comm_2">Delete Review</a>
+                            {% if review.user_id == session.user_id %}
+                            <a href="/delete/{{review.imdb}}/{{review.id}}" class="td_comm_2">Delete Review</a>
                             {% endif %}
                         </td>
                     </tr>
