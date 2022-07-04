@@ -12,6 +12,12 @@ def dashboard():
     data ={
         'id': session['user_id']
     }
+    user=User.get_by_id(data)
+
+    if not user:
+        session.clear()
+        return redirect('/logout')
+
     # IMDb API ROUTE THAT YOU HAVE TO USE AN API KEY FOR
     # FREE PLAN ONLY ALLOWS 100 API CALLS/DAY WITH API KEY
     # RETURNS 100 MOST POPULAR MOVIES THAT CAN BE PARSED TO TOP 5 ON DASHBOARD.HTML PAGE

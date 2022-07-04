@@ -52,3 +52,17 @@ def delete_job(id,id2):
     return redirect(f'/movie/{id}/reviews')
 
     
+@app.route('/myreviews')
+def get_my_reviews():
+    if 'user_id' not in session:
+        return redirect('/logout')
+    user_data = {
+        "id":session['user_id']
+    }
+    movie = requests.get(f'https://imdb-api.com/en/API/MostPopularMovies/k_19g8uwm0')
+
+
+    movies = movie.json()['items']
+    
+
+    return render_template("reviews.html",reviews=Review.get_reviews_by_user(user_data),user=User.get_by_id(user_data),movies=movies)

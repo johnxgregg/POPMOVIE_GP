@@ -342,6 +342,23 @@ strong {
                             0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
     }
 
+
+.myreviews{
+    color: white;
+    cursor: pointer;
+    padding: 20px 30px;
+    border-radius: 3.75rem;
+    line-height: 1rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    background-image: linear-gradient(-180deg, #000000 0%, #000000 100%);
+    box-shadow: 0 0rem 1rem 0 rgba(0,0,0,100),
+                            0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+                            0 0.25rem 0.5rem 0 rgb(0, 0, 0) inset;
+
+}
+
 .logout:active {
     transform: scale(.98);
 }
@@ -772,4 +789,19 @@ ul {
 
 .home {
     margin: 20px;
+}
+
+.container_review{
+    flex-wrap: wrap;
+    max-width: 100vw;
+}
+
+.image_review{
+    width: 200px;
+    margin-top: 0px;
+    
+}
+
+.table_review{
+    width: 20%;
 }
