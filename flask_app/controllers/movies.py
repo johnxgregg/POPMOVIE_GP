@@ -17,7 +17,7 @@ def dashboard():
     # RETURNS 100 MOST POPULAR MOVIES THAT CAN BE PARSED TO TOP 5 ON DASHBOARD.HTML PAGE
     
 
-    movie = requests.get(f'https://imdb-api.com/en/API/MostPopularMovies/k_19g8uwm0')
+    movie = requests.get(f'https://imdb-api.com/en/API/MostPopularMovies/k_udc93q81')
 
 
     movies = movie.json()['items']
@@ -38,7 +38,7 @@ def show_movie(id):
     # PARSED OUT TITLE, PLOT, AND IMDb RATING ON DETAILS.HTML PAGE
 
 
-    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_19g8uwm0/{id}')
+    movie = requests.get(f'https://imdb-api.com/en/API/Title/k_udc93q81/{id}')
 
     movies = movie.json()
     print(movie.json()['plot'])
