@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&family=PT+Serif:wght@700&family=Roboto:wght@300;900&family=Titan+One&display=swap" rel="stylesheet">
-    <title>Home</title>
-</head>
-<body>
-    <div class="title">
-    <h2 class="welcome"><span class="pop">POP</span>MOVIE!</h2>
-    </div>
-    <nav>
-        <div class="nav">
-            <a href="/myreviews" class="myreviews">My Reviews</a>
-            <a href="/logout" class="logout">Logout</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&family=PT+Serif:wght@700&family=Roboto:wght@300;900&family=Titan+One&display=swap"
+            rel="stylesheet"
+        />
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="title">
+            <h2 class="welcome"><span class="pop">POP</span>MOVIE!</h2>
         </div>
-    </nav>
+        <nav>
+            <div class="nav">
+                <a href="/myreviews" class="myreviews">My Reviews</a>
+                <a href="/logout" class="logout">Logout</a>
+            </div>
+        </nav>
         <!-- SHOW MOVIES -->
-    <div class="user_welcome">
-    <h2 class="shadow">Welcome {{ user.username}}!</h2>
-    </div>    
-    <h2 class="dash_h2">TOP 10 MOST POPULAR MOVIES</h2>
-    <div class="movie_dash">
-        <table class="table">
-            <thead>
-                <tr class="head">
-                    <th></th>
-                    <th></th>
-                    <th>Title</th>
-                    <!-- <th>Find Tickets</th> -->
-                    <th>IMDb Rating</th>
-                    <th>Action</th>
-                    <th>Review</th>
-                    <th>Find Tickets</th>
-                </tr>
-            </thead>
-            <tbody>
-                    {% for n in range(0,10) %}
+        <div class="user_welcome">
+            <h2 class="shadow">Welcome {{ user.username}}!</h2>
+        </div>
+        <h2 class="dash_h2">TOP 10 MOST POPULAR MOVIES</h2>
+        <div class="movie_dash">
+            <table class="table">
+                <thead>
+                    <tr class="head">
+                        <th></th>
+                        <th></th>
+                        <th>Title</th>
+                        <!-- <th>Find Tickets</th> -->
+                        <th>IMDb Rating</th>
+                        <th>Action</th>
+                        <th>Review</th>
+                        <th>Find Tickets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for movie in movies[:10] %}
                     <tr class="t_data">
-                        <td>{{ n+1 }}</td>
+                        <td>{{ loop.index }}</td>
+                        <!-- loop.index gives 1-based index -->
                         <td>
-                            <img src="{{ movies[n].image }}" class="imdb_img">
+                            <img src="{{ movie.image }}" class="imdb_img" />
                         </td>
-                        <td>{{ movies[n].title }}</td>
-                        <td>{{ movies[n].imDbRating }}</td>
+                        <td>{{ movie.title }}</td>
+                        <td>{{ movie.imDbRating }}</td>
                         <td>
-                            <a href="/movie/{{ movies[n].id}}/details" class="details">Details</a>
-                        </td>
-                        <td>
-
-                            
-
-                            <a href="/movie/{{movies[n].id}}/reviews" class="review">Review</a>
-
+                            <a
+                                href="/movie/{{ movie.id }}/details"
+                                class="details"
+                                >Details</a
+                            >
                         </td>
                         <td>
-                            <a href="https://www.imdb.com/showtimes/?ref_=nv_mv_sh" target="_blank" class="tickets">Tickets</a>
+                            <a
+                                href="/movie/{{ movie.id }}/reviews"
+                                class="review"
+                                >Review</a
+                            >
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.imdb.com/showtimes/?ref_=nv_mv_sh"
+                                target="_blank"
+                                class="tickets"
+                                >Tickets</a
+                            >
                         </td>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</body>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>
